@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz-App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #frage {
+      margin-bottom: 10px;
+    }
+
+    .antwort-input {
+      margin-bottom: 5px;
+    }
+
+    #submit-btn {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quiz-App</h1>
+  <form id="quiz-form">
+    <label for="frage">Frage:</label>
+    <input type="text" id="frage" required>
+    <br>
+
+    <label for="antwort1">Antwort 1:</label>
+    <input type="text" class="antwort-input" required>
+    <br>
+
+    <label for="antwort2">Antwort 2:</label>
+    <input type="text" class="antwort-input" required>
+    <br>
+
+    <label for="antwort3">Antwort 3:</label>
+    <input type="text" class="antwort-input" required>
+    <br>
+
+    <label for="antwort4">Antwort 4:</label>
+    <input type="text" class="antwort-input" required>
+    <br>
+
+    <label for="korrekteAntwort">Korrekte Antwort (1-4):</label>
+    <input type="number" id="korrekteAntwort" min="1" max="4" required>
+    <br>
+
+    <button type="submit" id="submit-btn">Quiz erstellen</button>
+  </form>
+
+  <script>
+    document.getElementById('quiz-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      let frage = document.getElementById('frage').value;
+      let antworten = [];
+      let antwortInputs = document.getElementsByClassName('antwort-input');
+      for (let i = 0; i < antwortInputs.length; i++) {
+        antworten.push(antwortInputs[i].value);
+      }
+
+      let korrekteAntwort = document.getElementById('korrekteAntwort').value;
+
+      // Hier kannst du den Code ergänzen, um die erstellte Frage und Antworten zu speichern oder weiterzuverarbeiten
+
+      let 
+
+      // Beispiel-Ausgabe in der Konsole
+      console.log('Frage:', frage);
+      console.log('Antworten:', antworten);
+      console.log('Korrekte Antwort:', korrekteAntwort);
+
+      // Zurücksetzen der Eingabefelder
+      document.getElementById('quiz-form').reset();
+    });
+
+    let quizList = [];
+
+    function speichereQuiz(frage, antworten, korrekteAntwort) {
+      let quiz = {
+        frage: frage,
+        antworten: antworten,
+        korrekteAntwort: korrekteAntwort
+      };
+
+      quizList.push(quiz);
+      console.log('Quiz gespeichert:', quiz);
+    }
+
+    document.getElementById('quiz-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      let frage = document.getElementById('frage').value;
+      let antworten = [];
+      let antwortInputs = document.getElementsByClassName('antwort-input');
+      for (let i = 0; i < antwortInputs.length; i++) {
+        antworten.push(antwortInputs[i].value);
+      }
+
+      let korrekteAntwort = document.getElementById('korrekteAntwort').value;
+
+      speichereQuiz(frage, antworten, korrekteAntwort);
+
+      // Zurücksetzen der Eingabefelder
+      document.getElementById('quiz-form').reset();
+    });
+
+    function exportiereQuizList() {
+      let jsonData = JSON.stringify(quizList);
+      console.log(jsonData);
+    }
+  </script>
+</body>
+</html>
