@@ -21,7 +21,7 @@ app.get('/quiz', (req, res) => {
 // POST handler for /quiz endpoint to add a new quiz question
 app.post('/quiz', (req, res) => {
   const quiz = req.body
-  fs.writeFile(QUIZ_FILE, JSON.stringify(quiz), err => {
+  fs.push(QUIZ_FILE, JSON.stringify(quiz), err => {
     if (err) throw err
     res.send('Quiz question added successfully')
   })
@@ -30,3 +30,6 @@ app.post('/quiz', (req, res) => {
 app.listen(7777, () => {
   console.log('Quiz app server listening on port 7777')
 })
+
+
+
