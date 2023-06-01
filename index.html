@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quiz Maker</title>
+  </head>
+  <body>
+    <h1>Quiz Maker</h1>
+    <form id="quiz-form">
+      <label for="question">Frage:</label>
+      <input type="text" id="question" name="question"><br><br>
+      
+      <label for="option1">Option 1:</label>
+      <input type="text" id="option1" name="option1"><br><br>
+      
+      <label for="option2">Option 2:</label>
+      <input type="text" id="option2" name="option2"><br><br>
+      
+      <label for="option3">Option 3:</label>
+      <input type="text" id="option3" name="option3"><br><br>
+      
+      <label for="option4">Option 4:</label>
+      <input type="text" id="option4" name="option4"><br><br>
+      
+      <input type="button" value="Frage hinzufügen" onclick="addQuestion()">
+    </form>
+    
+    <script>
+      function addQuestion() {
+        const questionInput = document.getElementById('question')
+        const option1Input = document.getElementById('option1')
+        const option2Input = document.getElementById('option2')
+        const option3Input = document.getElementById('option3')
+        const option4Input = document.getElementById('option4')
+        
+        const question = {
+          question: questionInput.value,
+          options: [
+            option1Input.value,
+            option2Input.value,
+            option3Input.value,
+            option4Input.value
+          ]
+        }
+        
+        fetch('http://localhost:7777/quiz', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(question)
+        })
+          .then(response => response.text())
+          .then(() => {
+            alert('Frage erfolgreich hinzugefügt!')
+            questionInput.value = ''
+            option1Input.value = ''
+            option2Input.value = ''
+            option3Input.value = ''
+            option4Input.value = ''
+          })
+      }
+    </script>
+  </html>
