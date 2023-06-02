@@ -53,6 +53,3 @@ app.get('/quiz/play', (req, res) => {
 app.listen(7777, () => {
   console.log('Quiz app server listening on port 7777');
 });
-
-
-
