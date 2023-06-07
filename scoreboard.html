@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz Scoreboard</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        border-radius: 10px;
+        margin-right: 10px;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .top-users {
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      .user-row {
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Quiz Scoreboard</h1>
+    <p>This is a leaderboard for the top users in our quiz game:</p>
+    <div class="top-users">Top Users:</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard"></tbody>
+    </table>
+    <script>
+      // Initialize an array to store users and their scores
+      let userScores = [];
+
+      // Function to update user scores
+      function updateScore(userId, score) {
+        // Check if the user already exists in the array
+        let existingUser = userScores.find(user => user.id === userId);
+
+        // If the user already exists, update their score
+        if (existingUser) {
+          existingUser.score = score;
+        }
+        // If the user does not exist, add them to the array
+        else {
+          userScores.push({ id: userId, score: score });
+        }
+      }
+        // Sort the array in descending order by score
+        userScores.sort((a, b) => b.score - a.score);
+
+        // Display the top 5 users and their scores
+        let leaderboard = document.getElementById('leaderboard');
+        leaderboard.innerHTML = '';
+        for (let i = 0; i < 5 && i < userScores.length; i++) {
+          let user = userScores[i];
+          let row = document.createElement('tr');
+          row.classList.add('user-row');
+          let nameCell = document.createElement('td');
+          let scoreCell = document.createElement
+        }

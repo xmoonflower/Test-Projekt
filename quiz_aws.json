@@ -550,14 +550,14 @@
 },
 {
     "id" : "50",
-    "question" : "",
+    "question" : "Eine große Menge strukturierter Daten wird in Amazon S3 im JSON-Format gespeichert. Sie müssen einen Dienst verwenden, um die S3-Daten direkt mit Standard-SQL zu analysieren. In der Zwischenzeit sollten die Daten durch Daten-Dashboards einfach visualisiert werden können. Welche der folgenden Dienstleistungen ist die am besten geeignete?",
     "answer" : {
-        "A" : "",
-        "B" : "",  
-        "C" : "",
-        "D" : ""
+        "A" : "Amazon Athena und Amazon QuickSight",
+        "B" : "AWS Glue und Amazon Athena",  
+        "C" : "AWS Glue und Amazon QuickSight",
+        "D" : "Amazon Kinesis Data Stream und Amazon QuickSight"
     },
-    "correct_answer" : ""
+    "correct_answer" : "A"
 },
 {
     "id" : "51",

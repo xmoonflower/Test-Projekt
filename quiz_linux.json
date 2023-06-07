@@ -22,112 +22,112 @@
 },
 {
     "id" : "2",
-    "question" : "",
+    "question" : "Welcher Befehl zeigt die Liste der Gruppen an, zu denen ein Benutzer gehört?",
     "answer" : {
-        "A" : "",
-        "B" : "",  
-        "C" : "",
-        "D" : ""
+        "A" : "Whoami",
+        "B" : "Isgroup",  
+        "C" : "who",
+        "D" : "Id"
     },
     "correct_answer" : ""
 },
 {
     "id" : "3",
-    "question" : "",
+    "question" : "Welche der folgenden Befehle sind korrekt, um das aktuelle Verzeichnis in das Home-Verzeichnis des Benutzers zu ändern? (Wählen Sie ZWEI Antworten)",
     "answer" : {
-        "A" : "",
-        "B" : "",  
-        "C" : "",
-        "D" : ""
+        "A" : "cd~",
+        "B" : "cd..",  
+        "C" : "cd",
+        "D" : "cd/"
     },
     "correct_answer" : ""
 },{
     "id" : "4",
-    "question" : "",
+    "question" : "Welche der folgenden Dateien enthält die Definition der lokalen Benutzerkonten?",
     "answer" : {
-        "A" : "",
-        "B" : "",  
-        "C" : "",
-        "D" : ""
+        "A" : "/etc/home",
+        "B" : "/etc/users",  
+        "C" : "/etc/passwd",
+        "D" : "/etc/id"
     },
     "correct_answer" : ""
 },
 {
     "id" : "5",
-    "question" : "",
+    "question" : "Welche Aussage über das Verzeichnis /etc/skel ist richtig? (Wählen Sie zwei Antworten)",
     "answer" : {
-        "A" : "",
-        "B" : "",  
-        "C" : "",
-        "D" : ""
+        "A" : "Die persönlichen Einstellungen von root befinden sich in diesem Verzeichnis",
+        "B" : "Die Dateien aus dem Verzeichnis werden beim Start des Systems in das Home-Verzeichnis des neuen Benutzers kopiert",  
+        "C" : "Die Dateien aus dem Verzeichnis werden beim Erstellen des Kontos in das Home-Verzeichnis des neuen Benutzers kopiert",
+        "D" : "Das Verzeichnis enthält einen Standardsatz von Konfigurationsdateien, die vom Befehl useradd verwendet werden"
     },
     "correct_answer" : ""
 },
 {
     "id" : "6",
-    "question" : "",
+    "question" : "Wie könnte man nach der Datei foo.txt im Verzeichnis /home suchen?",
     "answer" : {
-        "A" : "",
-        "B" : "",  
-        "C" : "",
-        "D" : ""
+        "A" : "find /home -name foo.txt",
+        "B" : "find /home -file foo.txt",  
+        "C" : "search /home foo.txt",
+        "D" : "find /home foo.txt"
     },
-    "correct_answer" : ""
+    "correct_answer" : "A"
 },
 {
     "id" : "7",
-    "question" : "",
+    "question" : "Welches der folgenden Systeme ist ein mobiles Betriebssystem, das auf einer modifizierten Version des Linux-Kernels basiert und hauptsächlich für mobile Geräte mit Touchscreen entwickelt wurde?",
     "answer" : {
-        "A" : "",
-        "B" : "",  
-        "C" : "",
-        "D" : ""
+        "A" : "Symbian",
+        "B" : "Android",  
+        "C" : "LinuxMobile",
+        "D" : "Linux Go"
     },
-    "correct_answer" : ""
+    "correct_answer" : "B"
 },
 {
     "id" : "8",
-    "question" : "",
+    "question" : "Welche Option kann verwendet werden, um die Fehler eines Befehls in eine bestimmte Datei umzuleiten?",
     "answer" : {
-        "A" : "",
-        "B" : "",  
-        "C" : "",
-        "D" : ""
+        "A" : "1>",
+        "B" : "2>",  
+        "C" : "E>",
+        "D" : "X>"
     },
-    "correct_answer" : ""
+    "correct_answer" : "B"
 },
 {
     "id" : "9",
-    "question" : "",
+    "question" : "Ihr System hat ein Problem, von dem Sie annehmen, dass es durch einen fehlerhaften Gerätetreiber verursacht wird. Welchen der folgenden Befehle sollten Sie verwenden, um den Nachrichtenpuffer des Kernels zu drucken?",
     "answer" : {
-        "A" : "",
-        "B" : "",  
-        "C" : "",
-        "D" : ""
+        "A" : "printdriver",
+        "B" : "dmesg",  
+        "C" : "ps",
+        "D" : "syslog"
     },
-    "correct_answer" : ""
+    "correct_answer" : "B"
 },
 {
     "id" : "10",
-    "question" : "",
+    "question" : "Was ist der Standard-Shell-Befehl, um das aktuelle Verzeichnis anzuzeigen?",
     "answer" : {
-        "A" : "",
-        "B" : "",  
-        "C" : "",
-        "D" : ""
+        "A" : "ls",
+        "B" : "cd",  
+        "C" : "pwd",
+        "D" : "dir"
     },
-    "correct_answer" : ""
+    "correct_answer" : "C"
 },
 {
     "id" : "11",
-    "question" : "",
+    "question" : "Welcher Befehl wird verwendet, um eine Datei im Linux-Terminal zu erstellen?",
     "answer" : {
-        "A" : "",
-        "B" : "",  
-        "C" : "",
-        "D" : ""
+        "A" : "touch",
+        "B" : "create",  
+        "C" : "new",
+        "D" : "make"
     },
-    "correct_answer" : ""
+    "correct_answer" : "A"
 },
 {
     "id" : "12",
