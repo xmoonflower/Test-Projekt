@@ -165,186 +165,171 @@
   </div>
 
   <script>
-  var questions = [
-    {
-      "id": "49",
-      "question": "Ein Start-up-Unternehmen hat eine Unternehmenszentrale in New York und ein Regionalbüro in Washington und Chicago. Diese Büros sind über Internetverbindungen miteinander verbunden. Kürzlich haben sie einige Anwendungsserver auf EC2-Instances migriert, die in der AWS-Region US-east-1 gestartet wurden. Das Entwicklerteam in der Unternehmenszentrale benötigt einen sicheren Zugriff auf diese Server für erste Tests und Leistungsprüfungen, bevor die neue Anwendung live geht. Da der Go-Live-Termin näher rückt, sucht das IT-Team nach einer schnellen Verbindung, die hergestellt werden kann. Welche Link-Option schlagen Sie als AWS-Berater als kostengünstige und schnelle Möglichkeit vor, eine sichere Konnektivität von On-Premise zu Servern herzustellen, die in AWS gestartet werden?",
-      "answer": {
-        "A": "Verwenden Sie AWS Direct Connect, um IPSEC-Konnektivität von On-Premise zu VGW herzustellen",
-        "B": "Installieren Sie eine Software-VPN-Appliance eines Drittanbieters aus AWS Marketplace in der EC2-Instance, um eine VPN-Verbindung zum lokalen Netzwerk herzustellen.",
-        "C": "Verwenden Sie Hardware-VPN über AWS Direct Connect, um IPSEC-Konnektivität von On-Premise zu VGW herzustellen.",
-        "D": "Verwenden Sie AWS Site-to-Site VPN, um eine IPSEC-VPN-Verbindung zwischen VPC und dem lokalen Netzwerk herzustellen"
-      },
-      "correct_answer": "D"
-    },
-    {
-      "id": "50",
-      "question": "Sie sind ein AWS-Lösungsarchitekt. Ihr Unternehmen verfügt über eine erfolgreiche Webanwendung, die in einer AWS Auto Scaling-Gruppe bereitgestellt wird. Die Anwendung zieht immer mehr globale Kunden an. Die Leistung der Anwendung wird jedoch beeinträchtigt. Ihr Vorgesetzter fragt Sie, wie Sie die Leistung und Verfügbarkeit der Anwendung verbessern können. Welche der folgenden AWS-Dienste würden Sie empfehlen?",
-      "answer": {
-        "A": "AWS DataSync",
-        "B": "Amazon DynamoDB Accelerator",
-        "C": "AWS Lake Formation",
-        "D": "AWS Global Accelerator"
-      },
-      "correct_answer": "D"
-    },
-    {
-      "id": "51",
-      "question": "Ihr Team entwickelt eine High-Performance-Computing-Anwendung (HPC). Die Anwendung löst komplexe, rechenintensive Probleme und benötigt ein leistungsstarkes Lustre-Dateisystem mit geringer Latenz. Sie müssen dieses Dateisystem kostengünstig in AWS konfigurieren. Welche Methode ist am besten geeignet?",
-      "answer": {
-        "A": "Erstellen eines Lustre-Dateisystems über Amazon FSx.",
-        "B": "Starten Sie ein leistungsstarkes Lustre-Dateisystem in Amazon EBS.",
-        "C": "Erstellen Sie einen Hochgeschwindigkeits-Volume-Cluster in einer EC2-Platzierungsgruppe.",
-        "D": "Starten Sie das Lustre-Dateisystem über Amazon S3."
-      },
-      "correct_answer": "A"
-    },
-    {
-    "id" : "0",
-    "question" : "Sie sind ein AWS-Lösungsarchitekt. Ihr Unternehmen verfügt über eine erfolgreiche Webanwendung, die in einer AWS Auto Scaling-Gruppe bereitgestellt wird. Die Anwendung zieht immer mehr globale Kunden an. Die Leistung der Anwendung wird jedoch beeinträchtigt. Ihr Vorgesetzter fragt Sie, wie Sie die Leistung und Verfügbarkeit der Anwendung verbessern können. Welche der folgenden AWS-Dienste würden Sie empfehlen?",
-    "answer" : {
-        "A" : "AWS DataSync",
-        "B" : "Amazon DynamoDB Accelerator",
-        "C" : "AWS Lake Formation",
-        "D" : "AWS Global Accelerator"
-    },
-    "correct_answer" : "D"
-},
-{
-    "id" : "1",
-    "question" : "Ihr Team entwickelt eine High-Performance-Computing-Anwendung (HPC). Die Anwendung löst komplexe, rechenintensive Probleme und benötigt ein leistungsstarkes Lustre-Dateisystem mit geringer Latenz. Sie müssen dieses Dateisystem kostengünstig in AWS konfigurieren. Welche Methode ist am besten geeignet?",
-    "answer" : {
-        "A" : "Erstellen eines Lustre-Dateisystems über Amazon FSx.",
-        "B" : "Starten Sie ein leistungsstarkes Lustre-Dateisystem in Amazon EBS.",
-        "C" : "Erstellen Sie einen Hochgeschwindigkeits-Volume-Cluster in einer EC2-Platzierungsgruppe.",
-        "D" : "Starten Sie das Lustre-Dateisystem über AWS Marketplace."
-    },
-    "correct_answer" : "A"
-},
-  ];
+    var questions = [
+        {
+            "id": "49",
+            "question": "Ein Start-up-Unternehmen hat eine Unternehmenszentrale in New York und ein Regionalbüro in Washington und Chicago. Diese Büros sind über Internetverbindungen miteinander verbunden. Kürzlich haben sie einige Anwendungsserver auf EC2-Instances migriert, die in der AWS-Region US-east-1 gestartet wurden. Das Entwicklerteam in der Unternehmenszentrale benötigt einen sicheren Zugriff auf diese Server für erste Tests und Leistungsprüfungen, bevor die neue Anwendung live geht. Da der Go-Live-Termin näher rückt, sucht das IT-Team nach einer schnellen Verbindung, die hergestellt werden kann. Welche Link-Option schlagen Sie als AWS-Berater als kostengünstige und schnelle Möglichkeit vor, eine sichere Konnektivität von On-Premise zu Servern herzustellen, die in AWS gestartet werden?",
+            "answer": {
+                "A": "Verwenden Sie AWS Direct Connect, um IPSEC-Konnektivität von On-Premise zu VGW herzustellen",
+                "B": "Installieren Sie eine Software-VPN-Appliance eines Drittanbieters aus AWS Marketplace in der EC2-Instance, um eine VPN-Verbindung zum lokalen Netzwerk herzustellen.",
+                "C": "Verwenden Sie Hardware-VPN über AWS Direct Connect, um IPSEC-Konnektivität von On-Premise zu VGW herzustellen.",
+                "D": "Verwenden Sie AWS Site-to-Site VPN, um eine IPSEC-VPN-Verbindung zwischen VPC und dem lokalen Netzwerk herzustellen"
+            },
+            "correct_answer": "D"
+        },
+        {
+            "id": "50",
+            "question": "Sie sind ein AWS-Lösungsarchitekt. Ihr Unternehmen verfügt über eine erfolgreiche Webanwendung, die in einer AWS Auto Scaling-Gruppe bereitgestellt wird. Die Anwendung zieht immer mehr globale Kunden an. Die Leistung der Anwendung wird jedoch beeinträchtigt. Ihr Vorgesetzter fragt Sie, wie Sie die Leistung und Verfügbarkeit der Anwendung verbessern können. Welche der folgenden AWS-Dienste würden Sie empfehlen?",
+            "answer": {
+                "A": "AWS DataSync",
+                "B": "Amazon DynamoDB Accelerator",
+                "C": "AWS Lake Formation",
+                "D": "AWS Global Accelerator"
+            },
+            "correct_answer": "D"
+        },
+        {
+            "id": "51",
+            "question": "Ihr Team entwickelt eine High-Performance-Computing-Anwendung (HPC). Die Anwendung löst komplexe, rechenintensive Probleme und benötigt ein leistungsstarkes Lustre-Dateisystem mit geringer Latenz. Sie müssen dieses Dateisystem kostengünstig in AWS konfigurieren. Welche Methode ist am besten geeignet?",
+            "answer": {
+                "A": "Erstellen eines Lustre-Dateisystems über Amazon FSx.",
+                "B": "Starten Sie ein leistungsstarkes Lustre-Dateisystem in Amazon EBS.",
+                "C": "Erstellen Sie einen Hochgeschwindigkeits-Volume-Cluster in einer EC2-Platzierungsgruppe.",
+                "D": "Starten Sie das Lustre-Dateisystem über AWS Marketplace."
+            },
+            "correct_answer": "A"
+        }
+    ];
 
-  var currentQuestionIndex = 0;
-  var score = 0;
 
-  function displayQuestion() {
-    var questionTextElement = document.getElementById("questionText");
-    questionTextElement.innerText = questions[currentQuestionIndex].question;
+    var currentQuestionIndex = 0;
+    var score = 0;
 
-    var label1 = document.getElementById("label1");
-    var label2 = document.getElementById("label2");
-    var label3 = document.getElementById("label3");
-    var label4 = document.getElementById("label4");
+    function displayQuestion() {
+        var questionTextElement = document.getElementById("questionText");
+        questionTextElement.innerText = questions[currentQuestionIndex].question;
 
-    label1.innerText = questions[currentQuestionIndex].answer.A;
-    label2.innerText = questions[currentQuestionIndex].answer.B;
-    label3.innerText = questions[currentQuestionIndex].answer.C;
-    label4.innerText = questions[currentQuestionIndex].answer.D;
+        var label1 = document.getElementById("label1");
+        var label2 = document.getElementById("label2");
+        var label3 = document.getElementById("label3");
+        var label4 = document.getElementById("label4");
 
-    document.getElementById("option1").checked = false;
-    document.getElementById("option2").checked = false;
-    document.getElementById("option3").checked = false;
-    document.getElementById("option4").checked = false;
-  }
+        label1.innerText = questions[currentQuestionIndex].answer.A;
+        label2.innerText = questions[currentQuestionIndex].answer.B;
+        label3.innerText = questions[currentQuestionIndex].answer.C;
+        label4.innerText = questions[currentQuestionIndex].answer.D;
 
-  function checkAnswer() {
-    var selectedOption = document.querySelector('input[name="answer"]:checked');
+        document.getElementById("option1").checked = false;
+        document.getElementById("option2").checked = false;
+        document.getElementById("option3").checked = false;
+        document.getElementById("option4").checked = false;
 
-    if (selectedOption !== null) {
-      var selectedValue = selectedOption.value;
-      var correctAnswer = questions[currentQuestionIndex].correct_answer;
-
-      if (selectedValue === correctAnswer) {
-        score++;
-        displayPopup("correct");
-        setTimeout(nextQuestion, 2000); // Warte 2 Sekunden und rufe die nächste Frage auf
-      } else {
-        displayPopup("wrong");
-        document.getElementById("correctAnswer").innerText = questions[currentQuestionIndex].answer[correctAnswer];
-      }
-
-      displayScore();
+        setTimeout(function () {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion();
+            } else {
+                endQuiz();
+            }
+        }, 10000); // Warte 10 Sekunden und überspringe zur nächsten Frage
     }
-  }
 
-  function displayScore() {
-    var scoreElement = document.getElementById("score");
-    scoreElement.innerText = score;
-  }
+    function checkAnswer() {
+        var selectedOption = document.querySelector('input[name="answer"]:checked');
 
-  function nextQuestion() {
-    currentQuestionIndex++;
+        if (selectedOption !== null) {
+            var selectedValue = selectedOption.value;
+            var correctAnswer = questions[currentQuestionIndex].correct_answer;
 
-    if (currentQuestionIndex >= questions.length) {
-      alert("Das Quiz ist beendet. Dein Endergebnis: " + score + " von " + questions.length);
-      currentQuestionIndex = 0;
-      score = 0;
+            if (selectedValue === correctAnswer) {
+                score++;
+                displayPopup("correct");
+                setTimeout(nextQuestion, 2000); // Warte 2 Sekunden und rufe die nächste Frage auf
+            } else {
+                displayPopup("wrong");
+                document.getElementById("correctAnswer").innerText = questions[currentQuestionIndex].answer[correctAnswer];
+            }
+
+            displayScore();
+        }
+    }
+
+    function displayScore() {
+        var scoreElement = document.getElementById("score");
+        scoreElement.innerText = score;
+    }
+
+    function nextQuestion() {
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            displayQuestion();
+        } else {
+            endQuiz();
+        }
+    }
+
+    function goToStartPage() {
+        currentQuestionIndex = 0;
+        score = 0;
+        displayQuestion();
+    }
+
+    function goBack() {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            displayQuestion();
+        }
+    }
+
+    function shuffleQuestions() {
+        questions = shuffleArray(questions);
+        displayQuestion();
+    }
+
+    function shuffleArray(array) {
+        var currentIndex = array.length, randomIndex;
+
+        while (currentIndex != 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]
+            ];
+        }
+
+        return array;
+    }
+
+    function displayPopup(popupType) {
+        var popup;
+
+        if (popupType === "correct") {
+            popup = document.getElementById("correctPopup");
+        } else if (popupType === "wrong") {
+            popup = document.getElementById("wrongPopup");
+        }
+
+        popup.style.display = "block";
+    }
+
+    function closePopup() {
+        var correctPopup = document.getElementById("correctPopup");
+        var wrongPopup = document.getElementById("wrongPopup");
+
+        correctPopup.style.display = "none";
+        wrongPopup.style.display = "none";
+    }
+
+    function endQuiz() {
+        alert("Das Quiz ist beendet. Dein Endergebnis: " + score + " von " + questions.length);
+        currentQuestionIndex = 0;
+        score = 0;
+        displayScore();
+        displayQuestion();
     }
 
     displayQuestion();
-  }
-
-  function goToStartPage() {
-    currentQuestionIndex = 0;
-    score = 0;
-    displayQuestion();
-  }
-
-  function goBack() {
-    currentQuestionIndex--;
-
-    if (currentQuestionIndex < 0) {
-      currentQuestionIndex = questions.length - 1;
-    }
-
-    displayQuestion();
-  }
-
-  function shuffleQuestions() {
-    questions = shuffleArray(questions);
-    displayQuestion();
-  }
-
-  function shuffleArray(array) {
-    var currentIndex = array.length, randomIndex;
-
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]
-      ];
-    }
-
-    return array;
-  }
-
-  function displayPopup(popupType) {
-    var popup;
-
-    if (popupType === "correct") {
-      popup = document.getElementById("correctPopup");
-    } else if (popupType === "wrong") {
-      popup = document.getElementById("wrongPopup");
-    }
-
-    popup.style.display = "block";
-  }
-
-  function closePopup() {
-    var correctPopup = document.getElementById("correctPopup");
-    var wrongPopup = document.getElementById("wrongPopup");
-
-    correctPopup.style.display = "none";
-    wrongPopup.style.display = "none";
-  }
-
-  displayQuestion();
 </script>
-
-  
 </body>
 </html>
-
-
-
