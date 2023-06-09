@@ -1,116 +1,135 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Quiz-App</title>
+  <title>Train your brain - Make Quiz</title>
   <style>
+    /* CSS-Styling für die Make Quiz-Seite */
     body {
       font-family: Arial, sans-serif;
     }
 
-    #frage {
-      margin-bottom: 10px;
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
     }
 
-    .antwort-input {
-      margin-bottom: 5px;
+    .main-content {
+      text-align: center;
+      margin-top: 50px;
     }
 
-    #submit-btn {
-      margin-top: 10px;
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>Quiz-App</h1>
-  <form id="quiz-form">
-    <label for="frage">Frage:</label>
-    <input type="text" id="frage" required>
-    <br>
+  <header>
+    <h1>Train your brain - Make Quiz</h1>
+  </header>
 
-    <label for="antwort1">Antwort 1:</label>
-    <input type="text" class="antwort-input" required>
-    <br>
+  <div class="main-content">
+    <form id="quizForm">
+      <label for="question">Frage:</label>
+      <input type="text" id="question" name="question" required>
 
-    <label for="antwort2">Antwort 2:</label>
-    <input type="text" class="antwort-input" required>
-    <br>
+      <label for="option1">Option 1:</label>
+      <input type="text" id="option1" name="option1" required>
 
-    <label for="antwort3">Antwort 3:</label>
-    <input type="text" class="antwort-input" required>
-    <br>
+      <label for="option2">Option 2:</label>
+      <input type="text" id="option2" name="option2" required>
 
-    <label for="antwort4">Antwort 4:</label>
-    <input type="text" class="antwort-input" required>
-    <br>
+      <label for="option3">Option 3:</label>
+      <input type="text" id="option3" name="option3" required>
 
-    <label for="korrekteAntwort">Korrekte Antwort (1-4):</label>
-    <input type="number" id="korrekteAntwort" min="1" max="4" required>
-    <br>
+      <label for="option4">Option 4:</label>
+      <input type="text" id="option4" name="option4" required>
 
-    <button type="submit" id="submit-btn">Quiz erstellen</button>
-  </form>
+      <label for="correctOption">Richtige Option (0-4, 0 ist keine Antwort):</label>
+      <input type="number" id="correctOption" name="correctOption" min="0" max="4" required>
+
+      <label for="correctOption2">Zweite richtige Option (0-4, 0 ist keine Antwort):</label>
+      <input type="number" id="correctOption2" name="correctOption2" min="0" max="4" required>
+
+      <button type="submit">Quizfrage erstellen</button>
+    </form>
+  </div>
 
   <script>
-    document.getElementById('quiz-form').addEventListener('submit', function(event) {
-      event.preventDefault();
+    document.getElementById('quizForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Verhindert das Neuladen der Seite nach dem Absenden des Formulars
 
-      let frage = document.getElementById('frage').value;
-      let antworten = [];
-      let antwortInputs = document.getElementsByClassName('antwort-input');
-      for (let i = 0; i < antwortInputs.length; i++) {
-        antworten.push(antwortInputs[i].value);
-      }
+      // Hole die eingegebenen Werte
+      var question = document.getElementById('question').value;
+      var option1 = document.getElementById('option1').value;
+      var option2 = document.getElementById('option2').value;
+      var option3 = document.getElementById('option3').value;
+      var option4 = document.getElementById('option4').value;
+      var correctOption = parseInt(document.getElementById('correctOption').value);
+      var correctOption2 = parseInt(document.getElementById('correctOption2').value);
 
-      let korrekteAntwort = document.getElementById('korrekteAntwort').value;
-
-      // Hier kannst du den Code ergänzen, um die erstellte Frage und Antworten zu speichern oder weiterzuverarbeiten
-
-      let 
-
-      // Beispiel-Ausgabe in der Konsole
-      console.log('Frage:', frage);
-      console.log('Antworten:', antworten);
-      console.log('Korrekte Antwort:', korrekteAntwort);
-
-      // Zurücksetzen der Eingabefelder
-      document.getElementById('quiz-form').reset();
-    });
-
-    let quizList = [];
-
-    function speichereQuiz(frage, antworten, korrekteAntwort) {
-      let quiz = {
-        frage: frage,
-        antworten: antworten,
-        korrekteAntwort: korrekteAntwort
+      // Erstelle ein JSON-Objekt mit den eingegebenen Werten
+      var quizData = {
+        question: question,
+        answer: {
+          A: option1,
+          B: option2,
+          C: option3,
+          D: option4
+        },
+        correct_answer: [correctOption, correctOption2]
       };
 
-      quizList.push(quiz);
-      console.log('Quiz gespeichert:', quiz);
-    }
-
-    document.getElementById('quiz-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      let frage = document.getElementById('frage').value;
-      let antworten = [];
-      let antwortInputs = document.getElementsByClassName('antwort-input');
-      for (let i = 0; i < antwortInputs.length; i++) {
-        antworten.push(antwortInputs[i].value);
-      }
-
-      let korrekteAntwort = document.getElementById('korrekteAntwort').value;
-
-      speichereQuiz(frage, antworten, korrekteAntwort);
-
-      // Zurücksetzen der Eingabefelder
-      document.getElementById('quiz-form').reset();
+      // Sende die POST-Anfrage an den Server
+      fetch('/frage-hinzufuegen', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(quizData)
+      })
+        .then(function(response) {
+          if (response.ok) {
+            // Zeige eine Erfolgsmeldung an
+            alert('Die Quizfrage wurde erfolgreich erstellt und gespeichert.');
+            // Leere die Eingabefelder
+            document.getElementById('quizForm').reset();
+          } else {
+            // Zeige eine Fehlermeldung an
+            alert('Beim Speichern der Quizfrage ist ein Fehler aufgetreten.');
+          }
+        })
+        .catch(function(error) {
+          console.log(error);
+          // Zeige eine Fehlermeldung an
+          alert('Beim Speichern der Quizfrage ist ein Fehler aufgetreten.');
+        });
     });
-
-    function exportiereQuizList() {
-      let jsonData = JSON.stringify(quizList);
-      console.log(jsonData);
-    }
   </script>
 </body>
 </html>
