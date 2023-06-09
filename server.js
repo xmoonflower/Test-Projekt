@@ -1,58 +1,46 @@
 const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
+const app = express();
 const fs = require('fs');
 
-const app = express();
-app.use(cors());
-app.use(bodyParser.json());
+// Middleware zum Parsen von JSON-Daten
+app.use(express.json());
 
-const QUIZ_FILE = './quiz.json';
-
-// POST handler for /quiz endpoint to add a new quiz question
-app.post('/quiz', (req, res) => {
-  const quizData = req.body;
-
-  fs.readFile(QUIZ_FILE, 'utf8', (err, data) => {
+// GET-Route für das Abrufen der aktuellen Fragenliste
+app.get('/fragen', (req, res) => {
+  fs.readFile('fragen.json', 'utf8', (err, data) => {
     if (err) {
-      console.error(err);
-      res.status(500).json({ success: false, message: 'Failed to read quiz data.' });
+      res.status(500).json({ error: 'Fehler beim Lesen der Fragen.' });
     } else {
-      let quiz = [];
-      if (data) {
-        quiz = JSON.parse(data);
-      }
-      
-      quiz.push(quizData);
-      
-      fs.writeFile(QUIZ_FILE, JSON.stringify(quiz), 'utf8', (err) => {
+      res.json(JSON.parse(data));
+    }
+  });
+});
+
+// POST-Route zum Hinzufügen einer neuen Frage
+app.post('/frage-hinzufuegen', (req, res) => {
+  fs.readFile('fragen.json', 'utf8', (err, data) => {
+    if (err) {
+      res.status(500).json({ error: 'Fehler beim Lesen der Fragen.' });
+    } else {
+      const questions = JSON.parse(data);
+      questions.push(req.body);
+
+      fs.writeFile('fragen.json', JSON.stringify(questions), 'utf8', (err) => {
         if (err) {
-          console.error(err);
-          res.status(500).json({ success: false, message: 'Failed to add quiz question.' });
+          res.status(500).json({ error: 'Fehler beim Speichern der Frage.' });
         } else {
-          res.json({ success: true, message: 'Quiz question added successfully.' });
+          res.json({ message: 'Die Quizfrage wurde erfolgreich erstellt und gespeichert.' });
         }
       });
     }
   });
 });
 
-// GET handler for /quiz/play endpoint to play the quiz
-app.get('/quiz/play', (req, res) => {
-  fs.readFile(QUIZ_FILE, 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({ success: false, message: 'Failed to read quiz data.' });
-    } else {
-      const quiz = JSON.parse(data);
-      res.json({ success: true, quiz: quiz });
-    }
-  });
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/make-quiz.html');
 });
 
-app.listen(7777, () => {
-  console.log('Quiz app server listening on port 7777');
+// Server starten
+app.listen(7799, () => {
+  console.log('Der Server ist gestartet und hört auf dem Port 7799.');
 });
-
-
-
